@@ -10,6 +10,7 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Link from "next/link";
 
 export default function UserNav() {
   return (
@@ -45,7 +46,10 @@ export default function UserNav() {
             Setting
             <DropdownMenuShortcut>S</DropdownMenuShortcut>
           </DropdownMenuItem>
-          <DropdownMenuItem>New Team</DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link href={"/dummy/seed"}>Apply Dummy Products</Link>
+            <DropdownMenuShortcut>A</DropdownMenuShortcut>
+          </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
