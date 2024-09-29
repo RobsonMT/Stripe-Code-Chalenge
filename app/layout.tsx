@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { cn } from "@/lib/utils";
+import { Oxygen } from "next/font/google";
+import Header from "@/components/layout/header";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const oxygem = Oxygen({
+  weight: ["300", "400", "700"],
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -25,8 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body className={cn(oxygem.className, "min-h-screen flex flex-col")}>
+        <Header />
+        <main className="flex-grow">{children}</main>
       </body>
     </html>
   );
